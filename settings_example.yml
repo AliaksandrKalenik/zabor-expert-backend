@@ -1,0 +1,12 @@
+%TAG !string! tag:yaml.org,2002:python/object/apply:string.
+---
+COMMON:
+  DEBUG: True
+  ENVIRONMENT: "local"
+
+DATABASE:
+  DB_HOST: "db_host"
+  DB_PORT: "5432"
+  DB_NAME: "db_name"
+  DB_USERNAME: "db_user"
+  DB_PASSWORD: "db_password"
