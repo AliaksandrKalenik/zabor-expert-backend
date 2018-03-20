@@ -1,3 +1,3 @@
 release: python manage.py migrate
-web: gunicorn django_base.wsgi --log-file -
-worker: celery worker -A django_base --loglevel=INFO
+web: gunicorn zabor_expert.wsgi --log-file -
+worker: celery worker -A zabor_expert --loglevel=INFO

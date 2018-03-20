@@ -1,4 +1,4 @@
-from django_base.settings import *
+from zabor_expert.settings import *
 
 
 import django_heroku

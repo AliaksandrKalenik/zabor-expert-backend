@@ -1,4 +1,4 @@
-# django_base
+# zabor_expert
 
 ### Installation:
   `pip install -Ur requirements.txt`
@@ -6,7 +6,7 @@
 ### Run:
   `./manage.py runserver` # run server
   
-  `celery worker -A django_base --loglevel=INFO` # run celery
+  `celery worker -A zabor_expert --loglevel=INFO` # run celery
 
 ## HEROKU:
   
@@ -18,7 +18,7 @@
       - Heroku rabbitMQ
       
     3. Set ENVIRONMENT VARIABLE in heroku admin panel:
-      DJANGO_SETTINGS_MODULE=django_base.heroku_settings
+      DJANGO_SETTINGS_MODULE=zabor_expert.heroku_settings
       
     4. Enable dyno resources in heroku admin panel: 
       - web

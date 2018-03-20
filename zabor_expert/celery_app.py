@@ -3,11 +3,11 @@ import os
 from celery import Celery
 
 if not os.environ.get('DJANGO_SETTINGS_MODULE'):
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_base.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'zabor_expert.settings')
 
 from django.conf import settings
 
-app = Celery('django_base')
+app = Celery('zabor_expert')
 
 # Using a string here means the worker will not have to
 # pickle the object when using Windows.
