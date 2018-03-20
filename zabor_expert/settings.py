@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'dynamic_rest',
     'rest_framework_filters',
     'user',
+    'product',
 ]
 
 MIDDLEWARE = [
