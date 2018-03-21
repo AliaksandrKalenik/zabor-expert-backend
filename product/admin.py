@@ -20,3 +20,8 @@ class ProductImageAdmin(admin.ModelAdmin):
 @admin.register(mx.Specification)
 class SpecificationAdmin(admin.ModelAdmin):
     list_display = [f.name for f in mx.Specification._meta.local_fields]
+
+
+@admin.register(mx.Requisites)
+class RequisitesAdmin(admin.ModelAdmin):
+    list_display = [f.name for f in mx.Requisites._meta.local_fields]

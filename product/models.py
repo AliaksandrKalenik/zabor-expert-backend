@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Q
 
 from core.models import BaseModel
 
@@ -161,3 +162,60 @@ class Specification(BaseModel):
 
     def __str__(self):
         return self.title
+
+
+class Requisites(BaseModel):
+
+    address = models.CharField(
+        verbose_name="Address",
+        max_length=1000,
+        null=True,
+        blank=True,
+    )
+    phone = models.CharField(
+        verbose_name="Phone number",
+        max_length=20,
+        null=True,
+        blank=True,
+    )
+    additional_phone = models.CharField(
+        verbose_name="Additional phone number",
+        max_length=20,
+        null=True,
+        blank=True,
+    )
+    email = models.CharField(
+        verbose_name="Email",
+        max_length=100,
+        null=True,
+        blank=True,
+    )
+    working_hours = models.CharField(
+        verbose_name="Working Hours",
+        max_length=100,
+        null=True,
+        blank=True,
+    )
+    area = models.TextField(
+        verbose_name="Area",
+        null=True,
+        blank=True,
+    )
+    additional_area_info = models.TextField(
+        verbose_name="Additional area information",
+        null=True,
+        blank=True,
+    )
+
+    requisites = models.TextField(
+        verbose_name="Requisites",
+        null=True,
+        blank=True,
+    )
+
+    def save(self, force_insert=False, force_update=False, using=None,
+             update_fields=None):
+        result = super(Requisites, self).save(force_insert, force_update,
+                                              using, update_fields)
+        Requisites.objects.filter(~Q(id=self.id)).delete()
+        return result

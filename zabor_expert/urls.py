@@ -17,6 +17,7 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth import get_user_model, login
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from rest_framework_swagger.views import get_swagger_view
 
 from django.conf import settings
@@ -36,7 +37,9 @@ def schema_view(request):
 
 
 urlpatterns = [
+    url(r'^', include('product.urls')),
     url(r'admin/', admin.site.urls),
     url(r'^users/', include('user.urls')),
     url(r'^documentation/$', schema_view),
 ] + static('/media/', document_root=settings.MEDIA_ROOT)
+urlpatterns += staticfiles_urlpatterns("static")
