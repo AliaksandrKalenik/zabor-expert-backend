@@ -209,10 +209,10 @@ CORS_ALLOW_METHODS = (
      'POST',
      'PUT',
 )
-# BROKER_URL = 'amqp://guest:guest@localhost//'
-# CELERY_IGNORE_RESULT = True
-# CELERY_ACCEPT_CONTENT = ['application/json']
-# CELERY_TASK_SERIALIZER = 'json'
+BROKER_URL = 'amqp://guest:guest@localhost//'
+CELERY_IGNORE_RESULT = True
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
 
 DB_HOST = "db_host"
 DB_PORT = "5432"
