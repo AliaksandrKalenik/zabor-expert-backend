@@ -37,7 +37,7 @@ def schema_view(request):
 
 
 urlpatterns = [
-    # url(r'^', include('product.urls')),
+    url(r'^', include('product.urls')),
     url(r'admin/', admin.site.urls),
     url(r'^users/', include('user.urls')),
     url(r'^documentation/$', schema_view),
